@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { auth, firestore } from '../firebase/firebase';
+import { auth, firestore } from '../firebase/firebase'; // Assicurati di aver creato il componente Navbar
 import LinkList from './LinkList';
 import AddLinkForm from './AddLinkForm';
 
@@ -32,19 +32,22 @@ function UserDashboard() {
   const [showAddLinkForm, setShowAddLinkForm] = useState(false);
 
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-2xl font-semibold mb-4">Welcome to your User Dashboard, {user ? user.email : 'Guest'}!</h1>
-      <h2 className="text-lg font-medium mb-2">Your Custom Links:</h2>
-      <LinkList links={links} />
-
-      <div className="mt-4">
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-          onClick={() => setShowAddLinkForm(!showAddLinkForm)}
-        >
-          {showAddLinkForm ? 'Hide' : 'Add'} Link Form
-        </button>
-        {showAddLinkForm && <AddLinkForm userId={user?.uid} />}
+    <div>
+      <div className="container mx-auto p-8">
+        <h1 className="text-2xl font-semibold mb-4">
+          Welcome to your User Dashboard :<br /> {user ? user.email : 'Guest'}!
+        </h1>
+        <h2 className="text-lg font-medium mb-2">Your Custom Links:</h2>
+        <LinkList links={links} />
+        <div className="mt-4">
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded"
+            onClick={() => setShowAddLinkForm(!showAddLinkForm)}
+          >
+            {showAddLinkForm ? 'Hide' : 'Add'} Link Form
+          </button>
+          {showAddLinkForm && <AddLinkForm userId={user?.uid} />}
+        </div>
       </div>
     </div>
   );
