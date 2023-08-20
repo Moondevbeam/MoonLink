@@ -8,16 +8,8 @@ To get started with MoonLink, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Install the necessary dependencies using `npm install`.
-3. Make your own .env file like this:
-
-    REACT_APP_API_KEY=your_api_key
-    REACT_APP_AUTH_DOMAIN=your_auth_domain
-    REACT_APP_PROJECT_ID=your_project_id
-    REACT_APP_STORAGE_BUCKET=your_storage_bucket
-    REACT_APP_MESSAGING_SENDER_ID=your_messaging_sender_id
-    REACT_APP_APP_ID=your_app_id
-   
-5. Run the development server using `npm start`.
+3. Make your own .env file
+4. Run the development server using `npm start`.
 
 ## Features
 
