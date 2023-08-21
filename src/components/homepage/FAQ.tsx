@@ -37,10 +37,10 @@ const FAQAccordion: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-8">
+    <section className="bg-white py-12 my-4">
       <div className="container mx-auto">
         <h2 className="text-2xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-4 mx-2">
           {faqData.map((item, index) => (
             <div key={index} className="border rounded-md overflow-hidden">
               <button
@@ -49,7 +49,7 @@ const FAQAccordion: React.FC = () => {
               >
                 {item.question}
               </button>
-              {openIndex === index && <p className="px-4 py-3">{item.answer}</p>}
+              {openIndex === index && <p className="px-4 py-3 bg-blue-100 bg-opacity-[0.7]">{item.answer}</p>}
             </div>
           ))}
         </div>

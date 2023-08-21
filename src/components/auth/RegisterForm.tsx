@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { auth, firestore } from '../firebase/firebase';
+import { useNavigate } from 'react-router-dom';
 
 interface RegisterFormData {
   email: string;
@@ -8,6 +9,7 @@ interface RegisterFormData {
 }
 
 function RegisterForm() {
+  const navigate = useNavigate();
   const { register, handleSubmit, formState } = useForm<RegisterFormData>();
   const { errors } = formState;
 
@@ -16,13 +18,12 @@ function RegisterForm() {
       const response = await auth.createUserWithEmailAndPassword(data.email, data.password);
 
       if (response.user) {
-        // Creazione della collezione dell'utente nel Firestore
         await firestore.collection('users').doc(response.user.uid).set({
           email: data.email,
-          // Altri campi che vuoi aggiungere
         });
 
         console.log('Registration successful');
+        navigate('/dashboard');
       }
     } catch (error) {
       console.error('Registration error', error);

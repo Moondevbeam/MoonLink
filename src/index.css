@@ -14,3 +14,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg1{
+  background-image: url('./components/assets/images/bg-1.webp');
+  object-fit: cover;
+}
+
+.bg2{
+  background-image: url('./components/assets/images/bg-2.webp');
+  object-fit: cover;
+}
