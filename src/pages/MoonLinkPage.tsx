@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { firestore } from '../components/firebase/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import AdFooter from '../components/utils/AdFooter';
 
 interface LinkData {
   id: string;
@@ -56,6 +57,7 @@ function MoonLinkPage() {
       ) : (
         <p className="text-lg">No links available.</p>
       )}
+      <AdFooter/>
     </div>
   );
 }
