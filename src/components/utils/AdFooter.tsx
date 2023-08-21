@@ -10,7 +10,7 @@ function AdFooter() {
         <button className="text-sm p-4">
           <a
             href="https://moon-link.vercel.app"
-            className="text-black hover:underline flex items-center justify-center animate-bounce hover:animate-none"
+            className="text-blue-600 hover:underline flex items-center justify-center animate-bounce hover:animate-none"
           >
             Sign Up now!
             <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
