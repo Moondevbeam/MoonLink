@@ -43,7 +43,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-gray-500 py-4 mx-2 my-1 rounded-2xl">
+    <nav className="bg-gray-500 py-4 mx-2 my-1 rounded-2xl md:container">
       <div className="container mx-auto flex justify-between items-center space-x-3 font-semibold">
         {username && (
           <span className="text-white text-lg p-2 mx-2">{username}</span>
