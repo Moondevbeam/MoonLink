@@ -43,7 +43,7 @@ function MoonLinkPage() {
                   className='border p-2 rounded-3xl space-x-1 w-96'
                   style={{ backgroundImage: `url(${link.image})`, backgroundSize: 'cover' }}
                 >
-                  <div className='rounded rounded-3xl backdrop-blur-md mx-16'>
+                  <div className='rounded rounded-3xl backdrop-blur-md mx-auto'>
                   <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                     {link.title} <FontAwesomeIcon icon={faExternalLinkAlt} className="text-blue-500" size='sm' />
                   </a>

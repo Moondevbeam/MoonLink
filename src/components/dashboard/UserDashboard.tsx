@@ -34,24 +34,16 @@ function UserDashboard() {
     return () => unsubscribe();
   }, []);
 
-  const [showAddLinkForm, setShowAddLinkForm] = useState(false);
-
   return (
     <div>
       <div className="container mx-auto p-8">
-        <h1 className="text-2xl font-semibold mb-4">
-          Welcome to your User Dashboard : {user ? username : 'Guest'}!
+        <h1 className="text-2xl font-semibold mb-4 text-center">
+          Welcome {user ? username : 'Guest'}!
         </h1>
-        <h2 className="text-lg font-medium mb-2">Your Custom Links:</h2>
+        <h2 className="text-lg font-medium text-center my-6">Your Custom Links:</h2>
         <LinkList links={links} />
-        <div className="mt-4">
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded"
-            onClick={() => setShowAddLinkForm(!showAddLinkForm)}
-          >
-            {showAddLinkForm ? 'Hide' : 'Add'} Link Form
-          </button>
-          {showAddLinkForm && <AddLinkForm userId={user?.uid} username={username} />}
+        <div className="flex justify-center my-2">
+        <AddLinkForm userId={user?.uid} username={username} />
         </div>
       </div>
     </div>
