@@ -52,10 +52,10 @@ function LinkList({ links }: LinkListProps) {
         {links.map((link) => (
           <li key={link.id} className="mb-2">
             <div
-              className="flex items-center space-x-2 rounded bg-purple-600 hover:bg-purple-700 px-2 md:w-96 w-64"
+              className="flex items-center space-x-2 rounded bg-purple-600 hover:bg-purple-700 px-2 md:w-96 w-72"
               style={{ backgroundImage: `url(${link.image})`, backgroundSize: 'cover' }}
             >
-              <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-white p-3 flex-grow">
+              <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-white p-2 flex-grow">
                 {link.title}
               </a>
               <button
