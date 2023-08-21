@@ -33,7 +33,7 @@ function MoonLinkPage() {
 
   return (
     <div className="container mx-auto p-8 text-center">
-      <h1 className="text-3xl font-semibold mb-4">Welcome to {username}'s Page!</h1>
+      <h1 className="text-2xl md:text-4xl font-semibold mb-4">Welcome to {username}'s Page!</h1>
       {links.length > 0 ? (
         <div className="space-y-4">
           <h2 className="text-xl font-medium mb-2">Links:</h2>
