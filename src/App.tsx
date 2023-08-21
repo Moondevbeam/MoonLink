@@ -4,6 +4,7 @@ import HomePage from './pages/Homepage';
 import AuthPage from './pages/AuthPage';
 import Dashboard from './pages/Dashboard';
 import Settings from './pages/Settings';
+import MoonLinkPage from './pages/MoonLinkPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/auth/*" element={<AuthPage />} />
         <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/settings" element={<Settings/>}/>
+        <Route path="/moonlink/:username" element={<MoonLinkPage/>}/>
       </Routes>
     </Router>
   );

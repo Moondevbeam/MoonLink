@@ -30,15 +30,14 @@ function Navbar() {
       }
     };
 
-    fetchUsername(); // Call the function to fetch the username
+    fetchUsername();
 
-    // Subscribe to changes in authentication state (user login/logout)
     const unsubscribe = auth.onAuthStateChanged(() => {
-      fetchUsername(); // Fetch username when authentication state changes
+      fetchUsername();
     });
 
     return () => {
-      unsubscribe(); // Clean up the auth state change listener
+      unsubscribe();
     };
   }, []);
 
@@ -51,6 +50,9 @@ function Navbar() {
         <div className="container mx-auto flex justify-end items-center space-x-3 font-semibold">
           <Link to="/dashboard" className="text-white text-lg font-semibold rounded bg-purple-600 hover:bg-purple-700 px-4 py-2">
             Dashboard
+          </Link>
+          <Link to={`/moonlink/${username}`} className="text-white text-lg font-semibold rounded bg-yellow-600 hover:bg-yellow-700 px-4 py-2">
+            MoonLink {/* Aggiungi un nome appropriato */}
           </Link>
           <div className="flex items-center space-x-3">
             <Link to="/settings" className="text-white text-lg font-semibold rounded bg-blue-600 hover:bg-blue-700 px-4 py-2">

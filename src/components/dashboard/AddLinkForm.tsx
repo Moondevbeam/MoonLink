@@ -4,26 +4,36 @@ import { firestore } from '../firebase/firebase';
 
 interface AddLinkFormProps {
   userId: string | null;
+  username: string | null;
 }
 
-function AddLinkForm({ userId }: AddLinkFormProps) {
+function AddLinkForm({ userId, username }: AddLinkFormProps) {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const onSubmit = async (data: any) => {
     try {
-      if (userId) {
-        // Aggiungi il link personalizzato a Firestore con l'ID dell'utente
-        await firestore.collection('links').add({
-          title: data.title,
-          url: data.url,
-          userId: userId,
-        });
+      const linkData = {
+        title: data.title,
+        url: data.url,
+        userId: userId,
+        username: username,
+      };
 
-        // Resetta il form dopo aver aggiunto il link
-        reset();
-      }
+      // Add the link to 'links' collection with a generated ID
+      const linkRef = await firestore.collection('links').add(linkData);
+
+      // Add the link to 'publiclinks' collection without userId using the same ID
+      const publicLinkData = {
+        title: data.title,
+        url: data.url,
+        username: username,
+      };
+      await firestore.collection('publiclinks').doc(linkRef.id).set(publicLinkData);
+
+      // Reset the form after adding the link
+      reset();
     } catch (error) {
-      console.error('Errore nell\'aggiunta del link:', error);
+      console.error('Error adding the link:', error);
     }
   };
 
