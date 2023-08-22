@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function CTA() {
   return (
-    <section className="bg-blue-600 text-white bg2 container mx-auto">
+    <section className="bg-blue-600 text-white bg2">
       <div className='backdrop-blur-sm py-10'>
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
